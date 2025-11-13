@@ -19,7 +19,7 @@
 - [llama.cpp](https://github.com/ggml-org/llama.cpp) (LLM inference engine mostly targeting CPUs);
 - [GGUF](https://huggingface.co/docs/hub/en/gguf) (binary file format for storing quantized models).
 
-GGUF quantization implements *Post-Training Quantization* (PTQ): given an already-trained Llama-like model in high precision, it reduces the bit width of each individual weight. The resulting checkpoint requires less memory and thus facillitates inference on consumer-grade hardware.
+GGUF quantization implements *Post-Training Quantization* (PTQ): given an already-trained Llama-like model in high precision, it reduces the bit width of each individual weight. The resulting checkpoint requires less memory and thus facilitates inference on consumer-grade hardware.
 
 ## Who built it? Why are there no official docs?
 GGUF was inspired by previous PTQ methods, including [GPTQ](https://arxiv.org/abs/2210.17323), [AWQ](https://arxiv.org/abs/2306.00978), [QLoRA](https://arxiv.org/abs/2305.14314) and [QuIP#](https://arxiv.org/abs/2402.04396). But unlike most prior work that came out of research labs, the GGUF ecosystem was developed by the prolific open-source contributor [Georgi Gerganov](https://github.com/ggerganov) and a few others.

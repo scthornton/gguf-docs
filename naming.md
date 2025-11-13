@@ -49,4 +49,4 @@ For instance, the screenshot below compares `Q4_K_S` (left) against `Q4_K_M` (ri
 
 
 ---
-[← Back to Main](README.md)
+[← Back to Main](README.md) | [Next: Commands →](commands.md)

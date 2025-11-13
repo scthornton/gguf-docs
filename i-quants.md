@@ -20,7 +20,7 @@ In contrast, I-quants treat groups of 8 weights as indivisible. This is *vector*
 w_vec = [w_1, w_2, ..., w_8] → integer_quant
 ```
 
-Vector quantization is facillitated by a *codebook* of *reference* (or *prototype*) vectors, with entries of this form:
+Vector quantization is facilitated by a *codebook* of *reference* (or *prototype*) vectors, with entries of this form:
 ```
 r_vec = [r_1, r_2, ..., r_8] → integer_code
 ```

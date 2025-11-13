@@ -14,7 +14,7 @@ For a weight matrix `W`, the importance matrix `I` has the same dimensions as `W
 <img src="images/importance-matrix.png" alt="importance-matrix" style="max-height: 400px;">
 
 ### The calibration set
-Since the definition of weight importance is tied to model behavior ("important weights cause big changes in model output"), we need to watch the model behavior on a *calibration set*. It's typical to use a few hundred instances from [Wikitext](https://huggingface.co/datasets/Salesforce/wikitext), a subsest of Wikipedia. There have been some discussions about [overfitting](https://www.reddit.com/r/LocalLLaMA/comments/1993iro/ggufs_quants_can_punch_above_their_weights_now/), though the authors claim overfitting is unlikely (see [comment](https://github.com/ggml-org/llama.cpp/discussions/5006#discussioncomment-8166807)).
+Since the definition of weight importance is tied to model behavior ("important weights cause big changes in model output"), we need to watch the model behavior on a *calibration set*. It's typical to use a few hundred instances from [Wikitext](https://huggingface.co/datasets/Salesforce/wikitext), a subset of Wikipedia. There have been some discussions about [overfitting](https://www.reddit.com/r/LocalLLaMA/comments/1993iro/ggufs_quants_can_punch_above_their_weights_now/), though the authors claim overfitting is unlikely (see [comment](https://github.com/ggml-org/llama.cpp/discussions/5006#discussioncomment-8166807)).
 
 Given a calibration dataset, the importance matrix is calculated based on the *activation* values, an idea borrowed from the [AWQ](https://arxiv.org/abs/2306.00978) paper.
 
@@ -66,12 +66,12 @@ To squeeze the last bit of performance, GGUF does a small grid search around the
 <img src="images/imatrix-code.png" alt="imatrix-code" style="max-height: 400px;">
 
 ## What overhead does the importance marix incur?
-None during inference! The importance matrix simply leads to more strategic choices of quantization constants. By inspecting a quantized checkpoint, there's virtually no way to tell whether the imporance matrix was used, since it doesn't store any extra values. (This is frustrating for some people, since they can't trace back how a checkpoint was quantized).
+None during inference! The importance matrix simply leads to more strategic choices of quantization constants. By inspecting a quantized checkpoint, there's virtually no way to tell whether the importance matrix was used, since it doesn't store any extra values. (This is frustrating for some people, since they can't trace back how a checkpoint was quantized).
 
 There's just a bit more pre-processing work to (a) pick a calibration dataset, (b) compute the imatrix, and (c) pass it to the quantization binary.
 
 ## Performance Impact
-⚠️ Section written by Claude Code, proceed with caution.
+⚠️🤖
 
 ### Quality Improvements
 - **Significant gains**: 10-30% perplexity improvement common with importance matrix
@@ -89,7 +89,7 @@ There's just a bit more pre-processing work to (a) pick a calibration dataset, (
 - **Inference**: No additional memory overhead
 
 ## Best Practices
-⚠️ Section written by Claude Code, proceed with caution.
+⚠️🤖
 
 ### Calibration Dataset Selection
 - **Use representative data**: Match your intended use case as closely as possible
@@ -114,4 +114,4 @@ There's just a bit more pre-processing work to (a) pick a calibration dataset, (
 - **Simple deployments**: May not justify additional complexity for some use cases
 
 ---
-[← Back: I-Quants](i-quants.md) | [Next: Practical Guide →](practical-guide.md)
+[← Back: I-Quants](i-quants.md) | [Next: Naming →](naming.md)
