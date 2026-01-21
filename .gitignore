@@ -1,1 +1,21 @@
-.claude
+# AI tool artifacts
+.claude/
+CLAUDE.md
+claude.md
+planning.md
+status.md
+notes.md
+todo.md
+*.chat
+*.conversation
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
